@@ -1,4 +1,42 @@
-# Spfs
+# SpFS (Renewed)
+
+This is the original plan but using Spotipy in place of libspotify and fusepy in place of libfuse. 
+
+To get started, make sure you are using a UNIX shell. 
+
+You'll want to run 
+
+```bash
+pip install spotipy
+```
+
+Once you've installed spotipy, change directories into the Spfs directory and add the following variables to your environment (just copy and paste):
+
+```bash
+export SPOTIPY_CLIENT_ID="437560379c1a4657aa5cfdf2ef92719d"
+export SPOTIPY_CLIENT_SECRET="e5680ff44c194975a3bba4217c5e2556"
+export SPOTIPY_REDIRECT_URI="http://localhost:8888/callback"
+```
+
+Then you should be able to run the program. I used python3 so I did
+
+```bash
+python3 spotifyfs.py mkunz778
+```
+
+The argument is my username and the program currently only works with my username but that should suffice for our needs to test functionality. 
+
+Valuable sources I found:
+
+https://github.com/plamere/spotipy
+
+https://thepythoncorner.com/dev/writing-a-fuse-filesystem-in-python/
+
+https://spotipy.readthedocs.io/en/2.12.0/
+
+
+
+## Spfs (Original)
   The aim of this project is to build a FUSE file system that acts as an interface for Spotify locally. We want to be able to support logging in to a session, browsing, playback, and SQL queries. Our file system will require an internet connection, as well as a valid Spotify premium subscription. 
   
   Spotify is one of the most popular audio streaming services, and offers a web API as well as a web playback API, accompanied by extensive documentation. The web API allows users to search all songs, artists, or playlists, as well as access user data such as saved tracks and albums. The web playback API will allow us to support music playback. 
@@ -14,3 +52,6 @@ cap the number of tracks we save in the map, or whatever data structure seems mo
 Sources: 
 https://github.com/upcrob/fsq 
 https://github.com/catharsis/spotifile 
+
+
+
