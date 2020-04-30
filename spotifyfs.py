@@ -27,3 +27,10 @@ if token:
 else:
     print("Can't get token for", username)
 
+
+def main(mountpoint, root):
+FUSE(Passthrough(root), mountpoint, nothreads=True, foreground=True)
+
+if __name__ == '__main__':
+    main(sys.argv[2], sys.argv[1])
+
